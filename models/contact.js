@@ -1,11 +1,10 @@
-const mongoose = require("mongoose"),
-    Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
-const contactSchema = new Schema ({
-    name: String,
-    email: String,
-    subject: String,
-    message: String
+const contactSchema = new Schema({
+  name: String,
+  email: String,
+  subject: String,
+  message: String,
 });
 
-module.exports = mongoose.model("Contact", contactSchema);
+module.exports = model("Contact", contactSchema);
