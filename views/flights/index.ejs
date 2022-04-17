@@ -2,7 +2,7 @@
 date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
 {month: "2-digit",day: "2-digit",year: "numeric"}).split("/").join(".") %>
 
-<form action="/" method="post">
+<form action="/" method="post" novalidate>
   <div>
     <div class="center">
       <div class="input-group input-group-lg">
@@ -49,7 +49,7 @@ date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
           aria-label="date"
           class="form-control index-input"
           name="date"
-          value="<%= date %>"
+          placeholder="departing"
           autocomplete="false"
           required
         />
