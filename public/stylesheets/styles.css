@@ -1,24 +1,23 @@
 body {
   background-color: #e3e3e3;
+  color: black;
   overflow-x: hidden !important;
   font-family: "Karla", sans-serif;
 }
 
-.bg-dark {
+.bg-danger {
   background-color: #fd1313 !important;
 }
-.btn-dark {
+.btn-danger {
   background-color: #fd1313 !important;
+
+  color: #fff;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #28a745 !important;
 }
 
-.btn-outline-secondary:active,
-.btn-outline-secondary:focus,
-.btn-outline-secondary:hover {
-  background-color: #fd1313 !important;
-}
-.btn-outline-dark:hover {
-  background-color: #fd1313 !important;
-}
 .plane {
   margin: 0 10px;
 }
@@ -26,6 +25,15 @@ body {
 .progress {
   height: 20px;
   width: 13rem;
+}
+
+.banner {
+  background-image: url("/images/kq-banner.jpg");
+  height: 150px;
+  width: 100%;
+
+  left: 0;
+  z-index: 1;
 }
 
 /******* Navbar *******/
@@ -51,7 +59,7 @@ nav {
 }
 
 .nav-list a:hover {
-  color: #3d84b8 !important;
+  color: rgb(54, 136, 54) !important;
 }
 
 .auth-btn {
@@ -76,7 +84,7 @@ nav {
   width: 80%;
   padding: 1.8rem;
   position: relative;
-  top: 9rem;
+  top: 2rem;
   background-color: #f7f7f7;
   border-radius: 25px;
 }
