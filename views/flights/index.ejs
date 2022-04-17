@@ -2,15 +2,12 @@
 date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
 {month: "2-digit",day: "2-digit",year: "numeric"}).split("/").join(".") %>
 
-
 <div class="banner"></div>
-
 
 <form action="/" method="post">
   <div>
     <div class="center">
       <div class="input-group input-group-lg">
-
         <label for="from" class="form-control heading-label"
           ><i class="fas fa-plane-departure"></i> FROM</label
         >
@@ -22,13 +19,6 @@ date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
         >
         <label for="passengerCount" class="form-control heading-label">
           <i class="fas fa-person"></i>TRAVELLERS</label
-
-        <label for="from" class="form-control heading-label">FROM</label>
-        <label for="to" class="form-control heading-label">TO</label>
-        <label for="date" class="form-control heading-label">DEPARTURE</label>
-        <label for="passengerCount" class="form-control heading-label"
-          >TRAVELLERS</label
-
         >
       </div>
       <div class="input-group input-group-lg">
@@ -37,14 +27,11 @@ date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
           type="text"
           aria-label="from"
           class="form-control index-input"
-
           value="NBO"
           name="from"
-
           value=""
           name="from"
           placeholder="city or airport"
-
           autocomplete="false"
           required
         />
@@ -53,25 +40,21 @@ date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
           type="text"
           aria-label="to"
           class="form-control index-input"
-
           value="MBA"
           name="to"
           autocomplete="false"
-
           value=""
           name="to"
           autocomplete="false"
           placeholder="city or airport"
-
           required
         />
         <datalist id="airports">
           <% for (let airport of airports) { %>
 
-          <option value="<%= airport.IATA_code %>">
+          <option value="<%= airport.IATA_code %>"></option>
 
           <option value="<%=airport.IATA_code %>">
- 
             <%= airport.city_name %>
           </option>
           <% } %>
@@ -136,9 +119,6 @@ date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
         <button type="submit" class="btn btn-danger btn-lg button">
           SEARCH
         </button>
-
-        <button type="submit" class="btn btn-dark btn-lg button">SEARCH</button>
-
       </div>
     </div>
   </div>
