@@ -10809,15 +10809,15 @@ textarea.form-control {
   -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
   box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
 }
-.btn.btn-primary {
-  background: #32cd32 !important;
-  border-color:#000000 !important;
+.btn.btn-danger {
+  background: #fd1313 !important;
+  /* border-color: #000000 !important; */
   color: #fff;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-  border-color: #fd1313 !important;
-  background: #fd1313 !important;
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
+  /* border-color: green !important; */
+  background: #28a745 !important;
 }
 
 .contactForm .form-control {
@@ -10897,7 +10897,7 @@ nav {
 }
 
 .nav-list a:hover {
-  color: #3d84b8 !important;
+  color: green !important;
 }
 
 .auth-btn {
@@ -10966,9 +10966,9 @@ footer {
   }
 }
 
-.bg-dark {
+.bg-danger {
   background-color: #fd1313 !important;
 }
-.btn-dark {
+.btn-danger {
   background-color: #fd1313 !important;
 }
