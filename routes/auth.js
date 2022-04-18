@@ -38,6 +38,18 @@ router.post(
           }
         });
       }),
+    check("username", "username should have atleast five characters").isLength({
+      min: 5,
+    }),
+    check("password", "Password should atleast have Five characters")
+      .isLength({ min: 5 })
+      .isAlphanumeric(),
+    check("confirmPassword").custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error("Passwords do not Match!!");
+      }
+      return true;
+    }),
   ],
   auth.signup
 );
