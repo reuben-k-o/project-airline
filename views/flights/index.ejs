@@ -1,6 +1,8 @@
-<% layout("layouts/boilerplate") %> <% let date = new Date();
-date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
-{month: "2-digit",day: "2-digit",year: "numeric"}).split("/").join(".") %>
+<% layout("layouts/boilerplate") %>
+<!-- prettier -->
+<% let date = new Date(); date.setDate(date.getDate() + 1); date =
+date.toLocaleDateString("en-GB", {month: "2-digit",day: "2-digit",year:
+"numeric"}).split("/").join(".") %>
 
 <form action="/" method="post" novalidate>
   <div>
