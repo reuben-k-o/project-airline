@@ -24,6 +24,8 @@ router
 
 router.get("/logout", auth.logout);
 
+router.get("/signup", auth.getSignup);
+
 router.post(
   "/signup",
   [

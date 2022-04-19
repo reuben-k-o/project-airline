@@ -15,6 +15,7 @@
   "license": "ISC",
   "homepage": "https://github.com/reuben-k-o/project-airline#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.1",
     "dotenv": "^10.0.0",

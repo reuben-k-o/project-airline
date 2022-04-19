@@ -1,4 +1,5 @@
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 const _ = require("lodash");
 const User = require("../models/user");
 
@@ -37,6 +38,41 @@ module.exports.logout = (req, res) => {
   res.redirect("/");
 };
 
+module.exports.getSignup = (req, res, next) => {
+  res.status(200).render("auth/register", {
+    path: "register",
+  });
+};
+
 module.exports.signup = (req, res, next) => {
   const { email, username, password } = req.body;
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    res.status(422).render("register", {
+      path: "/signup",
+      errorMessage: errors.array()[0].msg,
+      validationErrors: errors.array(),
+      oldInput: {
+        name,
+        email,
+        password,
+      },
+    });
+  }
+
+  bcrypt
+    .hash(password, 12)
+    .then((hashedPass) => {
+      const user = new User({
+        name,
+        email,
+        password: hashedPass,
+      });
+      return user.save();
+    })
+    .then(() => {
+      res.redirect("auth/login");
+    })
+    .catch((err) => console.log(err));
 };
