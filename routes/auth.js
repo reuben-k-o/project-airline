@@ -38,7 +38,7 @@ router.post(
           }
         });
       }),
-    check("username", "username should have atleast five characters").isLength({
+    check("name", "username should have atleast five characters").isLength({
       min: 5,
     }),
     check("password", "Password should atleast have Five characters")

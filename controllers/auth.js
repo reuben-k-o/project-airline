@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const _ = require("lodash");
 const User = require("../models/user");
 
