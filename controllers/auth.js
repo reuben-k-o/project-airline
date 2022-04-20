@@ -41,6 +41,7 @@ module.exports.logout = (req, res) => {
 module.exports.getSignup = (req, res, next) => {
   res.status(200).render("auth/register", {
     path: "register",
+    errorMessage: "",
   });
 };
 
