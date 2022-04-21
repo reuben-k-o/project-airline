@@ -24,36 +24,4 @@ router
 
 router.get("/logout", auth.logout);
 
-router.get("/signup", auth.getSignup);
-
-router.post(
-  "/signup",
-  [
-    check("email")
-      .isEmail()
-      .custom((value, { req }) => {
-        return User.findOne({ email: value }).then((userDoc) => {
-          if (userDoc) {
-            return Promise.reject(
-              "E-mail already exists, Kindly choose another one!"
-            );
-          }
-        });
-      }),
-    check("name", "username should have atleast five characters").isLength({
-      min: 5,
-    }),
-    check("password", "Password should atleast have Five characters")
-      .isLength({ min: 5 })
-      .isAlphanumeric(),
-    check("confirmPassword").custom((value, { req }) => {
-      if (value !== req.body.password) {
-        throw new Error("Passwords do not Match!!");
-      }
-      return true;
-    }),
-  ],
-  auth.signup
-);
-
 module.exports = router;
