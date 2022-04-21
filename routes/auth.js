@@ -1,8 +1,6 @@
 const express = require("express"),
   router = express.Router(),
   passport = require("passport");
-const { check } = require("express-validator");
-const User = require("../models/user");
 
 const catchAsync = require("../utils/catchAsync");
 const auth = require("../controllers/auth");

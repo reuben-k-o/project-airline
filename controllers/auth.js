@@ -1,5 +1,3 @@
-const { validationResult } = require("express-validator");
-const bcrypt = require("bcryptjs");
 const _ = require("lodash");
 const User = require("../models/user");
 
@@ -18,6 +16,7 @@ module.exports.register = async (req, res, next) => {
       res.redirect("/");
     });
   } catch (e) {
+    // console.log(e.message);
     req.flash("error", e.message);
     res.redirect("/register");
   }
