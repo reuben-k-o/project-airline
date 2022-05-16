@@ -1,10 +1,10 @@
-<% layout("layouts/boilerplate") %>
-<!-- prettier -->
-<% let date = new Date(); date.setDate(date.getDate() + 1); date =
-date.toLocaleDateString("en-GB", {month: "2-digit",day: "2-digit",year:
-"numeric"}).split("/").join(".") %>
+<% layout("layouts/boilerplate") %> <% let date = new Date();
+date.setDate(date.getDate() + 1); date = date.toLocaleDateString("en-GB",
+{month: "2-digit",day: "2-digit",year: "numeric"}).split("/").join(".") %>
 
-<form action="/" method="post" novalidate>
+<div class="banner"></div>
+
+<form action="/" method="post">
   <div>
     <div class="center">
       <div class="input-group input-group-lg">
@@ -27,7 +27,7 @@ date.toLocaleDateString("en-GB", {month: "2-digit",day: "2-digit",year:
           type="text"
           aria-label="from"
           class="form-control index-input"
-          value=""
+          value="NBO"
           name="from"
           value=""
           name="from"
@@ -40,7 +40,7 @@ date.toLocaleDateString("en-GB", {month: "2-digit",day: "2-digit",year:
           type="text"
           aria-label="to"
           class="form-control index-input"
-          value=""
+          value="MBA"
           name="to"
           autocomplete="false"
           value=""
@@ -65,7 +65,7 @@ date.toLocaleDateString("en-GB", {month: "2-digit",day: "2-digit",year:
           aria-label="date"
           class="form-control index-input"
           name="date"
-          placeholder="departing"
+          value="<%= date %>"
           autocomplete="false"
           required
         />
